@@ -1,0 +1,36 @@
+{
+  "tasks": [
+    {
+      "id": "1",
+      "title": "Task 1",
+      "tags": ["tag1", "tag2"],
+      "endDate": "2023-03-01",
+      "state": "todo",
+      "description": "This is task 1"
+    },
+    {
+      "id": "2",
+      "title": "Task 2",
+      "tags": ["tag3", "tag4"],
+      "endDate": "2023-03-02",
+      "state": "completed",
+      "description": "This is task 2"
+    },
+    {
+      "id": "3",
+      "title": "Task 3",
+      "tags": ["tag1", "tag2", "tag5"],
+      "endDate": "2023-03-03",
+      "state": "todo",
+      "description": "This is task 3"
+    },
+    {
+      "id": "4",
+      "title": "Task 4",
+      "tags": ["tag1", "tag2", "tag5"],
+      "endDate": "2023-03-03",
+      "state": "todo",
+      "description": "This is task 4"
+    }
+  ]
+}
