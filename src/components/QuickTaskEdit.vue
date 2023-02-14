@@ -3,6 +3,9 @@ import type Task from "@/models/Task";
 import { useLayoutStore } from "@/stores/layout";
 import { useTaskStore } from "@/stores/task";
 import { computed, ref } from "vue";
+import { useQuasar } from "quasar";
+
+const $q = useQuasar();
 
 const taskStore = useTaskStore();
 const task = computed(() => {
@@ -15,10 +18,15 @@ const newTask = ref({
 
 const layoutStore = useLayoutStore();
 
-const save = () => {
-  taskStore.updateTask(newTask.value);
+const save = async () => {
+  await taskStore.updateTask(newTask.value);
+  $q.notify({
+    type: "positive",
+    message: "Updated successfully!",
+  });
+
   taskStore.setTaskToEdit(null);
-  layoutStore.setDrawerComponent(null);
+  layoutStore.setDrawerComponent();
   layoutStore.closeRightDrawer();
 };
 </script>

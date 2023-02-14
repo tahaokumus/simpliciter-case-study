@@ -25,8 +25,6 @@ const fetchGif = () => {
   fetch(giphyURL)
     .then((response) => response.json())
     .then((data) => {
-      console.log(data);
-
       gif.value = data.data.images.original.url;
     });
 };

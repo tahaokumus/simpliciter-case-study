@@ -2,35 +2,60 @@
   "tasks": [
     {
       "id": "1",
-      "title": "Task 1",
-      "tags": ["tag1", "tag2"],
+      "title": "Write documentation",
+      "tags": [
+        "docs",
+        "project"
+      ],
       "endDate": "2023-03-01",
-      "state": "todo",
-      "description": "This is task 1"
+      "state": "completed",
+      "description": "You should write documentation for your project"
     },
     {
       "id": "2",
-      "title": "Task 2",
-      "tags": ["tag3", "tag4"],
-      "endDate": "2023-03-02",
+      "title": "Update README",
+      "tags": [
+        "docs",
+        "readme",
+        "project"
+      ],
+      "endDate": "2023-03-16",
       "state": "completed",
-      "description": "This is task 2"
+      "description": "Update README file"
     },
     {
       "id": "3",
-      "title": "Task 3",
-      "tags": ["tag1", "tag2", "tag5"],
+      "title": "Estimate the project",
+      "tags": [
+        "estimation",
+        "project"
+      ],
       "endDate": "2023-03-03",
       "state": "todo",
-      "description": "This is task 3"
+      "description": "Estimate the project and write it down"
     },
     {
       "id": "4",
-      "title": "Task 4",
-      "tags": ["tag1", "tag2", "tag5"],
+      "title": "Update FE",
+      "tags": [
+        "FE",
+        "project"
+      ],
       "endDate": "2023-03-03",
       "state": "todo",
-      "description": "This is task 4"
+      "description": "Update FE for the project"
+    },
+    {
+      "state": "todo",
+      "description": "",
+      "title": "Add AI to the project",
+      "tags": [
+        "project",
+        "BE",
+        "AI"
+      ],
+      "endDate": "2023-02-15",
+      "id": "GN61k0p"
     }
   ]
 }

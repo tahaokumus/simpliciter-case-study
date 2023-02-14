@@ -1,7 +1,5 @@
-<script setup lang="ts"></script>
-
 <template>
-  <main>
-    <h1>Welcome</h1>
+  <main class="q-pa-lg">
+    <div class="text-h2">Homepage</div>
   </main>
 </template>
