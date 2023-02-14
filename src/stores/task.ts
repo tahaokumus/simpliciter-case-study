@@ -12,6 +12,7 @@ import type { NewTask } from "@/models/Task";
 export const useTaskStore = defineStore("task", {
   state: () => ({
     tasks: [] as Task[],
+    taskToEdit: null as Task | null,
   }),
   getters: {
     getTasks: (state) => state.tasks,
@@ -27,6 +28,9 @@ export const useTaskStore = defineStore("task", {
         return acc;
       }, [] as string[]);
     },
+    getCompletedTasks: (state) =>
+      state.tasks.filter((task) => task.state === "completed"),
+    getTaskToEdit: (state) => state.taskToEdit,
   },
   actions: {
     async fetchTasks() {
@@ -35,7 +39,10 @@ export const useTaskStore = defineStore("task", {
     },
     async fetchTask(id: string) {
       const task = await fetchTask(id);
-      this.tasks.push(task);
+      const index = this.tasks.findIndex((t) => t.id === task.id);
+      if (index !== -1) {
+        this.tasks.splice(index, 1, task);
+      } else this.tasks.push(task);
     },
     async createTask(task: NewTask) {
       const newTask = await createTask(task);
@@ -50,6 +57,17 @@ export const useTaskStore = defineStore("task", {
       await deleteTask(id);
       const index = this.tasks.findIndex((t) => t.id === id);
       this.tasks.splice(index, 1);
+    },
+    setTaskToEdit(id: string | null) {
+      if (!id) {
+        this.taskToEdit = null;
+        return;
+      }
+
+      const task = this.tasks.find((t) => t.id === id);
+      if (task) {
+        this.taskToEdit = task;
+      }
     },
   },
 });

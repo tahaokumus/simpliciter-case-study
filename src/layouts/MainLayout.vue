@@ -4,11 +4,12 @@ import { computed } from "vue";
 
 export default {
   setup() {
-    const layout = useLayoutStore();
+    const layoutStore = useLayoutStore();
 
     return {
-      rightDrawerOpen: computed(() => layout.rightDrawerOpen),
-      toggleRightDrawer: layout.toggleRightDrawer,
+      rightDrawerOpen: computed(() => layoutStore.rightDrawerOpen),
+      toggleRightDrawer: layoutStore.toggleRightDrawer,
+      drawerComponent: computed(() => layoutStore.drawerComponent),
     };
   },
 };
@@ -41,7 +42,7 @@ export default {
       side="right"
       bordered
     >
-      <!-- drawer content -->
+      <component :is="drawerComponent" />
     </q-drawer>
 
     <q-page-container>
